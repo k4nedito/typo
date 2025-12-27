@@ -2,6 +2,32 @@
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
+:root {
+	--bg: #eff1f5;
+	--mantle: #e6e9ef;
+	--crust: #dce0e8;
+	--surface: #ccd0da;
+	--fg: #4c4f69;
+	--subtext: #6c6f85;
+	--primary: #1e66f5;
+	--secondary: #8839ef;
+	--border: #acb0be;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #1e1e2e;
+		--mantle: #181825;
+		--crust: #11111b;
+		--surface: #313244;
+		--fg: #cdd6f4;
+		--subtext: #a6adc8;
+		--primary: #89b4fa;
+		--secondary: #cba6f7;
+		--border: #585b70;
+	}
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -18,4 +44,18 @@ body {
 	font-family: system-ui, -apple-system, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background: var(--bg);
+	color: var(--fg);
 }
+
+.bg-base { background: var(--bg); }
+.bg-mantle { background: var(--mantle); }
+.bg-crust { background: var(--crust); }
+.bg-surface { background: var(--surface); }
+
+.text-fg { color: var(--fg); }
+.text-subtext { color: var(--subtext); }
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+
+.border-theme { border-color: var(--border); }
